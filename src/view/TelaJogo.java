@@ -7,10 +7,10 @@ public class TelaJogo {
 
     Barra barra = new Barra();
     
-    float xPos, yPos;
 
     public void teste (GLAutoDrawable drawable) {
 
-        barra.barra(drawable, xPos);
+        barra.barra(drawable);
+        
     }
 }

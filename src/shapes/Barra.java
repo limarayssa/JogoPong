@@ -3,7 +3,7 @@ package shapes;
 import com.jogamp.opengl.GL2;
 import com.jogamp.opengl.GLAutoDrawable;
 import com.jogamp.opengl.glu.GLU;
-import com.jogamp.opengl.util.gl2.GLUT; //ADICIONADO (primitivas 3D)
+import com.jogamp.opengl.util.gl2.GLUT;
 import java.awt.Color;
 
 public class Barra {
@@ -15,7 +15,7 @@ public class Barra {
 
     public static float barraVelocidade = 10f;
 
-    public void barra(GLAutoDrawable drawable, float xPos) {
+    public void barra(GLAutoDrawable drawable) {
         GL2 gl = drawable.getGL().getGL2();
         gl.glClear(GL2.GL_COLOR_BUFFER_BIT | GL2.GL_DEPTH_BUFFER_BIT);
 

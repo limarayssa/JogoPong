@@ -33,7 +33,7 @@ public class KeyBoard implements KeyListener {
                 break;
             case KeyEvent.VK_RIGHT:
                 System.out.println("setinha direita");
-                barra.setBarraX(barra.getBarraX() + - barra.barraVelocidade);
+                barra.setBarraX(barra.getBarraX() + barra.barraVelocidade);
 
                 break;
         }
