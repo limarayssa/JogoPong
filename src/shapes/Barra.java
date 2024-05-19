@@ -7,12 +7,12 @@ import com.jogamp.opengl.util.gl2.GLUT; //ADICIONADO (primitivas 3D)
 import java.awt.Color;
 
 public class Barra {
-    
+
     public static float barraX = -5;
     public float barraAltura = 5f;
     public int barraLargura = 20;
     public float barraY = -50 / 2 - barraAltura / 2;
-    
+
     public static float barraVelocidade = 10f;
 
     public void barra(GLAutoDrawable drawable, float xPos) {
@@ -42,6 +42,14 @@ public class Barra {
         this.barraX = barraX;
     }
 
+    public float getBarraVelocidade() {
+        return barraVelocidade;
+    }
+    
+    public void setbarraVelocidade(float barraVelocidade) {
+        this.barraVelocidade = barraVelocidade;
+    }
+
     public void setBarraAltura(float barraAltura) {
         this.barraAltura = barraAltura;
     }
@@ -64,10 +72,6 @@ public class Barra {
 
     public float getBarraAltura() {
         return barraAltura;
-    }
-
-    public float getBarraVelocidade() {
-        return barraVelocidade;
     }
 
 }
