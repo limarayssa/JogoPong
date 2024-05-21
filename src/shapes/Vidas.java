@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package shapes;
 
 import com.jogamp.opengl.GL2;
@@ -10,10 +7,7 @@ import com.jogamp.opengl.GLProfile;
 import com.jogamp.opengl.glu.GLU;
 import com.jogamp.opengl.util.gl2.GLUT;
 
-/**
- *
- * @author Rayssa
- */
+
 public class Vidas {
     
     public void vidas(GLAutoDrawable drawable) {
