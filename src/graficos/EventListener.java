@@ -37,6 +37,9 @@ public class EventListener implements GLEventListener {
 
         //ADICIONADO (Habilita o buffer de profundidade)
         gl.glEnable(GL2.GL_DEPTH_TEST);
+        gl.glHint(GL2.GL_PERSPECTIVE_CORRECTION_HINT, GL2.GL_NICEST);
+        gl.glDepthFunc(GL2.GL_LEQUAL);
+
         angulo = 0;
     }
 
@@ -46,29 +49,8 @@ public class EventListener implements GLEventListener {
         GL2 gl = drawable.getGL().getGL2();
         GLUT glut = new GLUT(); //ADICIONADO (objeto para desenho 3D)
 
-        
-
         /* //iniciar nas instruções
         inicio.telaInicial(gl); */
-        
-        
-        /* gl.glClear(GL2.GL_COLOR_BUFFER_BIT | GL2.GL_DEPTH_BUFFER_BIT); // MODIFICADO      
-        gl.glLoadIdentity(); //lê a matriz identidade
-        gl.glPolygonMode(GL2.GL_FRONT_AND_BACK, GL2.GL_LINE); //ADICIONADO 
-        gl.glColor3f(1, 0, 0);
-
-        //desenha um cubo
-        gl.glRotated(angulo, 1, 1, 1);
-        glut.glutSolidCube(50);
-
-        gl.glFlush();
-
-        angulo++;*/
-
-        /*
-            desenho da cena        
-        */
-        
         
         telaInicial.teste(drawable);
 

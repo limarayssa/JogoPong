@@ -27,14 +27,19 @@ public class KeyBoard implements KeyListener {
                 System.exit(0);
                 break;
             case KeyEvent.VK_LEFT:
-                System.out.println("setinha esquerda");
-                barra.setBarraX(barra.getBarraX() - barra.barraVelocidade);
+                //195 meu monitor
+                if (barra.getBarraX() > - 150) {
+                    barra.setBarraX(barra.getBarraX() - barra.barraVelocidade);
+                }
                 System.out.println(barra.getBarraX());
                 break;
             case KeyEvent.VK_RIGHT:
-                System.out.println("setinha direita");
-                barra.setBarraX(barra.getBarraX() + barra.barraVelocidade);
-
+                //175 meu monitor
+                if (barra.getBarraX() < 150) {
+                    System.out.println("setinha direita");
+                    barra.setBarraX(barra.getBarraX() + barra.barraVelocidade);
+                    System.out.println(barra.getBarraX());
+                }
                 break;
         }
     }

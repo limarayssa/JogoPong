@@ -2,9 +2,6 @@ package shapes;
 
 import com.jogamp.opengl.GL2;
 import com.jogamp.opengl.GLAutoDrawable;
-import com.jogamp.opengl.glu.GLU;
-import com.jogamp.opengl.util.gl2.GLUT; //ADICIONADO (primitivas 3D)
-import java.awt.Color;
 
 public class Barra {
 
@@ -15,18 +12,19 @@ public class Barra {
 
     public static float barraVelocidade = 10f;
 
-    public void barra(GLAutoDrawable drawable, float xPos) {
+    public void barra(GLAutoDrawable drawable) {
         GL2 gl = drawable.getGL().getGL2();
         gl.glClear(GL2.GL_COLOR_BUFFER_BIT | GL2.GL_DEPTH_BUFFER_BIT);
 
         gl.glColor3f(0, 0, 1);
+        gl.glPushMatrix();
         gl.glBegin(GL2.GL_QUADS);
         gl.glVertex2f(barraX, barraY);
         gl.glVertex2f(barraX, barraY + barraAltura);
         gl.glVertex2f(barraX + barraLargura, barraY + barraAltura);
         gl.glVertex2f(barraX + barraLargura, barraY);
+        gl.glPopMatrix();
 
-        gl.glTranslatef(barraX, 0, 1);
         gl.glEnd();
     }
 
@@ -45,7 +43,7 @@ public class Barra {
     public float getBarraVelocidade() {
         return barraVelocidade;
     }
-    
+
     public void setbarraVelocidade(float barraVelocidade) {
         this.barraVelocidade = barraVelocidade;
     }

@@ -27,7 +27,7 @@ public class Renderer {
         GLProfile profile = GLProfile.get(GLProfile.GL2);
         GLCapabilities caps = new GLCapabilities(profile);
         window = GLWindow.create(caps);
-       // window.setFullscreen(true);
+        //window.setFullscreen(true);
         window.setSize(screenWidth, screenHeight);
         //window.setResizable(false);
 
@@ -36,6 +36,7 @@ public class Renderer {
         window.addGLEventListener(start); //adiciona a Cena a Janela  
         //Habilita o teclado : cena
         window.addKeyListener(new KeyBoard(start));
+        window.setTitle("Jogo de pong");
 
         //window.requestFocus();
         FPSAnimator animator = new FPSAnimator(window, 60);
