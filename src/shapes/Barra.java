@@ -24,7 +24,7 @@ public class Barra {
         gl.glVertex2f(barraX + barraLargura, barraY + barraAltura);
         gl.glVertex2f(barraX + barraLargura, barraY);
         gl.glPopMatrix();
-
+        
         gl.glEnd();
     }
 
