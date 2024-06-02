@@ -4,9 +4,6 @@
  */
 package view;
 
-import com.jogamp.opengl.GL2;
-import com.jogamp.opengl.glu.GLU;
-import com.jogamp.opengl.util.gl2.GLUT;
 import com.jogamp.opengl.util.awt.TextRenderer;
 import java.awt.Color;
 import java.awt.Font;
@@ -14,11 +11,10 @@ import graficos.Renderer;
 
 public class Inicio {
 
-    GLU glu;
     private TextRenderer textRenderer;
     String texto1, texto2, texto3, texto4, texto5, texto6;
 
-    public void telaInicial(GL2 gl) {
+    public void telaInicial() {
         texto1 = "Temos aqui um jogo de pong em que o objetivo é o mesmo de ";
         texto2 = "jogar peteca: não deixar a bola cair";
         texto3 =  "";

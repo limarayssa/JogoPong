@@ -4,27 +4,18 @@ import com.jogamp.opengl.GL2;
 import com.jogamp.opengl.GLAutoDrawable;
 import com.jogamp.opengl.GLEventListener;
 import com.jogamp.opengl.glu.GLU;
-import com.jogamp.opengl.util.gl2.GLUT; //ADICIONADO (primitivas 3D)
-import java.awt.Color;
-import shapes.Barra;
-import view.Background;
+import view.StarryBackground;
 import view.Inicio;
 import view.TelaJogo;
 
-/**
- *
- * @author Kakugawa
- */
 public class EventListener implements GLEventListener {
 
     private float xMin, xMax, yMin, yMax, zMin, zMax;
     GLU glu;
     float angulo; //ADICIONADO
     Inicio inicio = new Inicio();
-    Barra barra = new Barra();
     TelaJogo telaInicial = new TelaJogo();
-    Background fundoTela = new Background();
-    
+    StarryBackground fundoTela = new StarryBackground();
 
     @Override
     public void init(GLAutoDrawable drawable) {
@@ -40,19 +31,17 @@ public class EventListener implements GLEventListener {
         gl.glHint(GL2.GL_PERSPECTIVE_CORRECTION_HINT, GL2.GL_NICEST);
         gl.glDepthFunc(GL2.GL_LEQUAL);
 
-        angulo = 0;
     }
 
     @Override
     public void display(GLAutoDrawable drawable) {
-        //obtem o contexto Opengl
         GL2 gl = drawable.getGL().getGL2();
-        GLUT glut = new GLUT(); //ADICIONADO (objeto para desenho 3D)
 
         /* //iniciar nas instruções
         inicio.telaInicial(gl); */
-        
-        telaInicial.teste(drawable);
+        telaInicial.iniciar(drawable);
+
+        fundoTela.fundo(gl);
 
         gl.glFlush();
     }
@@ -77,15 +66,11 @@ public class EventListener implements GLEventListener {
         gl.glLoadIdentity(); //lê a matriz identidade
 
         //Projeção ortogonal
-        //true:   aspect >= 1 configura a altura de -1 para 1 : com largura maior
-        //false:  aspect < 1 configura a largura de -1 para 1 : com altura maior
         if (width >= height) {
             gl.glOrtho(xMin * aspect, xMax * aspect, yMin, yMax, zMin, zMax);
         } else {
             gl.glOrtho(xMin, xMax, yMin / aspect, yMax / aspect, zMin, zMax);
         }
-        
-        
 
         //ativa a matriz de modelagem
         gl.glMatrixMode(GL2.GL_MODELVIEW);
@@ -95,4 +80,5 @@ public class EventListener implements GLEventListener {
     @Override
     public void dispose(GLAutoDrawable drawable) {
     }
+
 }
