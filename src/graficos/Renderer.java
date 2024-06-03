@@ -4,7 +4,6 @@ import input.KeyBoard;
 import com.jogamp.newt.event.WindowAdapter;
 import com.jogamp.newt.event.WindowEvent;
 import com.jogamp.newt.opengl.GLWindow;
-import com.jogamp.opengl.GLAutoDrawable;
 import com.jogamp.opengl.GLCapabilities;
 import com.jogamp.opengl.GLProfile;
 import com.jogamp.opengl.util.FPSAnimator;
@@ -20,6 +19,7 @@ public class Renderer {
     //public static int screenWidth = 600;  //MODIFICADO
     public static int screenWidth = 600;
     public static int screenHeight = 600;
+    
     //public static int screenHeight = 600; //MODIFICADO 
 
     //Cria a janela de rendeziração do JOGL
@@ -30,7 +30,8 @@ public class Renderer {
         GLCapabilities caps = new GLCapabilities(profile);
         window = GLWindow.create(caps);
         window.setFullscreen(true);
-        window.setResizable(false);
+        //window.setSize(screenWidth, screenWidth);
+        window.setResizable(true);
 
         EventListener start = new EventListener();
 

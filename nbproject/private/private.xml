@@ -3,10 +3,15 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Rayssa/Documents/NetBeansProjects/JogoPong/src/view/StarryBackground.java</file>
-            <file>file:/C:/Users/Rayssa/Documents/NetBeansProjects/JogoPong/src/shapes/Bola.java</file>
-            <file>file:/C:/Users/Rayssa/Documents/NetBeansProjects/JogoPong/src/shapes/ScoreVidas.java</file>
+            <file>file:/C:/Users/Rayssa/Documents/NetBeansProjects/JogoPong/src/view/Screens.java</file>
+            <file>file:/C:/Users/Rayssa/Documents/NetBeansProjects/JogoPong/src/resources/Som.java</file>
+            <file>file:/C:/Users/Rayssa/Documents/NetBeansProjects/JogoPong/src/view/Background.java</file>
+            <file>file:/C:/Users/Rayssa/Documents/NetBeansProjects/JogoPong/src/view/Inicio.java</file>
+            <file>file:/C:/Users/Rayssa/Documents/NetBeansProjects/JogoPong/src/view/TelaJogo.java</file>
             <file>file:/C:/Users/Rayssa/Documents/NetBeansProjects/JogoPong/src/graficos/EventListener.java</file>
+            <file>file:/C:/Users/Rayssa/Documents/NetBeansProjects/JogoPong/src/input/KeyBoard.java</file>
+            <file>file:/C:/Users/Rayssa/Documents/NetBeansProjects/JogoPong/src/graficos/Renderer.java</file>
+            <file>file:/C:/Users/Rayssa/Documents/NetBeansProjects/JogoPong/src/shapes/PlacarVidas.java</file>
         </group>
     </open-files>
 </project-private>

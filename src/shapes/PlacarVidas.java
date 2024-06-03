@@ -3,14 +3,17 @@ package shapes;
 import com.jogamp.opengl.GL2;
 import com.jogamp.opengl.GLAutoDrawable;
 import com.jogamp.opengl.util.gl2.GLUT;
+import resources.Som;
 
 public class PlacarVidas {
+
+    private Som soundFX = new Som();
 
     Bola bola = new Bola();
 
     //chamada das classes de vida, usando o parâmetro do número de vidas para mostrar na tela
     public void vidas(GLAutoDrawable drawable, int vidasRestantes) {
-        
+
         vidasRestantes = bola.getPontosVidas();
 
         vida1(drawable, vidasRestantes >= 1);
@@ -18,6 +21,11 @@ public class PlacarVidas {
         vida3(drawable, vidasRestantes >= 3);
         vida4(drawable, vidasRestantes >= 4);
         vida5(drawable, vidasRestantes == 5);
+
+        if (vidasRestantes == 0) {
+            soundFX.barulhoGameover();
+
+        }
 
     }
 

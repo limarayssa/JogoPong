@@ -5,8 +5,10 @@ import com.jogamp.newt.event.KeyEvent;
 import com.jogamp.newt.event.KeyListener;
 import com.jogamp.opengl.util.gl2.GLUT;
 import static graficos.Renderer.init;
+import resources.Som;
 import shapes.Barra;
 import shapes.Bola;
+import view.Inicio;
 import view.Screens;
 import view.TelaJogo;
 
@@ -20,13 +22,14 @@ public class KeyBoard implements KeyListener {
     private Screens pause = new Screens();
     private Barra barra = new Barra();
     private Bola bola = new Bola();
-    private TelaJogo inicio = new TelaJogo();
+    private TelaJogo iniciarJogo = new TelaJogo();
+    private Inicio iniciar = new Inicio();
+    private Som soundFX = new Som();
     GLUT glut = new GLUT();
 
     public KeyBoard(EventListener start) {
         this.start = start;
     }
-
 
     @Override
     public void keyPressed(KeyEvent e) {
@@ -44,7 +47,7 @@ public class KeyBoard implements KeyListener {
                 break;
             case KeyEvent.VK_RIGHT:
                 if (!pause.isPausado()) {
-                    if (barra.getBarraX() < 150) {
+                    if (barra.getBarraX() < 100) {
                         System.out.println("setinha direita");
                         barra.setBarraX(barra.getBarraX() + barra.barraVelocidade);
                         System.out.println(barra.getBarraX());
@@ -52,17 +55,16 @@ public class KeyBoard implements KeyListener {
                 }
                 break;
             case KeyEvent.VK_P:
-                    pause.setPausado(true);
+                soundFX.barulhoPause();
+                pause.setPausado(true);
                 break;
             case KeyEvent.VK_S:
-                    pause.setPausado(false);
+                pause.setPausado(false);
                 break;
-            case KeyEvent.VK_SPACE:
+            case KeyEvent.VK_ENTER:
+                iniciar.setInicio(true);
+                break;
                 
-                    bola.setPontos(0);
-                    bola.setPontosVidas(5);
-                    init();
-                break;
         }
     }
 
