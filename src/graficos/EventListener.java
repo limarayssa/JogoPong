@@ -4,7 +4,8 @@ import com.jogamp.opengl.GL2;
 import com.jogamp.opengl.GLAutoDrawable;
 import com.jogamp.opengl.GLEventListener;
 import com.jogamp.opengl.glu.GLU;
-import view.StarryBackground;
+import resources.Som;
+import view.Background;
 import view.Inicio;
 import view.TelaJogo;
 
@@ -12,16 +13,14 @@ public class EventListener implements GLEventListener {
 
     private float xMin, xMax, yMin, yMax, zMin, zMax;
     GLU glu;
-    float angulo; //ADICIONADO
     Inicio inicio = new Inicio();
     TelaJogo telaInicial = new TelaJogo();
-    StarryBackground fundoTela = new StarryBackground();
+    Background fundoTela = new Background();
 
     @Override
     public void init(GLAutoDrawable drawable) {
-        //dados iniciais da cena
         glu = new GLU();
-        GL2 gl = drawable.getGL().getGL2(); //ADICIONADO
+        GL2 gl = drawable.getGL().getGL2();
         //Estabelece as coordenadas do SRU (Sistema de Referencia do Universo)
         xMin = yMin = zMin = -100; //MODIFICADO
         xMax = yMax = zMax = 100; //MODIFICADO
@@ -37,12 +36,9 @@ public class EventListener implements GLEventListener {
     public void display(GLAutoDrawable drawable) {
         GL2 gl = drawable.getGL().getGL2();
 
-        /* //iniciar nas instruções
-        inicio.telaInicial(gl); */
-        telaInicial.iniciar(drawable);
-
+        //iniciar nas instruções
+        inicio.telaInicial(drawable);
         fundoTela.fundo(gl);
-
         gl.glFlush();
     }
 
@@ -50,28 +46,23 @@ public class EventListener implements GLEventListener {
     public void reshape(GLAutoDrawable drawable, int x, int y, int width, int height) {
         //obtem o contexto grafico Opengl
         GL2 gl = drawable.getGL().getGL2();
-
         //evita a divisão por zero
         if (height == 0) {
             height = 1;
         }
         //calcula a proporção da janela (aspect ratio) da nova janela
         float aspect = (float) width / height;
-
         //seta o viewport para abranger a janela inteira
         gl.glViewport(0, 0, width, height);
-
         //ativa a matriz de projeção
         gl.glMatrixMode(GL2.GL_PROJECTION);
         gl.glLoadIdentity(); //lê a matriz identidade
-
         //Projeção ortogonal
         if (width >= height) {
             gl.glOrtho(xMin * aspect, xMax * aspect, yMin, yMax, zMin, zMax);
         } else {
             gl.glOrtho(xMin, xMax, yMin / aspect, yMax / aspect, zMin, zMax);
         }
-
         //ativa a matriz de modelagem
         gl.glMatrixMode(GL2.GL_MODELVIEW);
         gl.glLoadIdentity(); //lê a matriz identidade
